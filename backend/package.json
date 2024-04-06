@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server",
     "backend": "nodemon server"
+    
   },
   "author": "Muhammad Mansoor Ahmed",
   "license": "ISC",

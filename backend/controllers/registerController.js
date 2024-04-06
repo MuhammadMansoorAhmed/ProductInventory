@@ -36,7 +36,7 @@ const registerController = asyncHandler(async (req, res) => {
         password,
     });
     // generate Token
-    const token = generateToken(newUser._id)
+    const token = generateToken(newUser._id);
 
     //sending Http-Only cookie
     res.cookie("token", token, {

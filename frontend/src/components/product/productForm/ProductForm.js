@@ -14,64 +14,80 @@ const ProductForm = ({
     saveProduct
 }) => {
     return (
-        <div className='add-product'>
-            <Card className={"card"} >
-                <form onSubmit={saveProduct}>
-                    <Card className={"group"}>
-                        <label >Product Image</label>
-                        <code className='--color-dark'>Supported Formats:jpg, png, jpeg</code>
-                        <input type="file" name='image' onChange={(e) => {
-                            handleImageChange(e);
-                        }} />
-                        {productImagePreview !== null ? (
-                            <div className="image-preview">
-                                <img src={productImagePreview} alt="Product " />
-                            </div>
-                        ) : (
-                            <p>No image set for this product</p>
-                        )}
-                    </Card>
-                    <label>Product Name:</label>
-                    <input type="text"
-                        placeholder='Product Name'
-                        name='name'
-                        value={product?.name}
-                        onChange={handleInputChange}
-                    />
+      <div className="add-product">
+        <Card className={"card"}>
+          <form onSubmit={saveProduct}>
+            <Card className={"group"}>
+              <label>Product Image</label>
+              <code className="--color-dark">
+                Supported Formats:jpg, png, jpeg
+              </code>
+              <input
+                type="file"
+                name="image"
+                onChange={(e) => {
+                  handleImageChange(e);
+                }}
+              />
+              {productImagePreview !== null ? (
+                <div className="image-preview">
+                  <img src={productImagePreview} alt="Product " />
+                </div>
+              ) : (
+                <p>No image set for this product</p>
+              )}
+            </Card>
+            <label>Product Name:</label>
+            <input
+              type="text"
+              placeholder="Product Name"
+              name="name"
+              value={product?.name}
+              onChange={handleInputChange}
+            />
 
-                    <label>Product Category:</label>
-                    <input type="text"
-                        placeholder='Product Category'
-                        name='category'
-                        value={product?.category}
-                        onChange={handleInputChange}
-                    />
+            <label>Product Category:</label>
+            <input
+              type="text"
+              placeholder="Product Category"
+              name="category"
+              value={product?.category}
+              onChange={handleInputChange}
+            />
 
-                    <label>Product Price:</label>
-                    <input type="text"
-                        placeholder='Product Price'
-                        name='price'
-                        value={product?.price}
-                        onChange={handleInputChange}
-                    />
-                    <label>Product Quantity:</label>
-                    <input type="text"
-                        placeholder='Product Quantity'
-                        name='quantity'
-                        value={product?.quantity}
-                        onChange={handleInputChange}
-                    />
-                    <label>Product Description</label>
-                    <ReactQuill theme="snow" value={description} onChange={setDescription}
-                        modules={ProductForm.modules} formats={ProductForm.formats}
-                    />
-                    <div className="--my">
-                        <button type='submit' className='--btn --btn-primary'>Save Product</button>
-                    </div>
-                </form>
-            </Card >
-        </div >
-    )
+            <label>Product Price:</label>
+            <input
+              type="text"
+              placeholder="Product Price"
+              name="price"
+              value={product?.price}
+              onChange={handleInputChange}
+            />
+            <label>Product Quantity:</label>
+            <input
+              type="text"
+              placeholder="Product Quantity"
+              name="quantity"
+              value={product?.quantity}
+              onChange={handleInputChange}
+            />
+            <label>Product Description</label>
+            <ReactQuill
+              theme="snow"
+              value={description}
+              onChange={setDescription}
+              modules={ProductForm.modules}
+              formats={ProductForm.formats}
+            />
+            <div className="--my">
+              <button type="submit" className="--btn --btn-primary">
+                Save Product
+              </button>
+            </div>
+          </form>
+        </Card>
+      </div>
+    );
 }
 
 ProductForm.modules = {

@@ -11,7 +11,7 @@ const logoutController = asyncHandler(async (req, res) => {
         secure: true
     });
 
-    return res.status(200).json({ message: "Successfully Loged Out" })
+    return res.status(200).json({ message: "Successfully Logged Out" });
 });
 
 
